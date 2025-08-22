@@ -6,6 +6,7 @@ The idea is to treat every candidate interaction as a discrete event. These even
 ## Solution Overview
 
 **Observability**: An Analytics Service will listen to all events, process them, and store them in a database optimized for analytical queries. A new Recruiter Dashboard will query this database to visualize the candidate funnel in near-real time, showing drop-off rates at each stage.
+![Mappa Diagram](Mappa%20Diagram.svg)
 
 **Predict and Notify**: A Scheduler Service will run periodically (e.g. every hour) to query the existing database for candidates who have not produced an "activity" event in the last 24 hours. When an "at-risk" candidate is found, this service will trigger a Notification Service to send a detailed alert to the recruitment team's Slack channel.
 
